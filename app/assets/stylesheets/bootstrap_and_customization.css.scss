@@ -1,6 +1,20 @@
-$body-bg:			#ecf0f1;
-$jumbotron-bg:		#ffffff;
-$navbar-default-bg:	#ffffff;
-$btn-primary-bg: 	#ff5a60;
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+
+$body-bg:						#ecf0f1;
+$jumbotron-bg:					#ffffff;
+$navbar-default-bg:				#ffffff;
+$navbar-height:					60px;
+$navbar-default-brand-color:	#c0392b;
+$btn-primary-bg: 				#c0392b;
 
 @import 'bootstrap';
+
+.center {
+	text-align: center;
+}
+
+.navbar-brand {
+	font-family: 'Pacifico';
+	font-weight: bold;
+	font-size:		200%;
+}
