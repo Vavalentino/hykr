@@ -1,4 +1,5 @@
 Hykr::Application.routes.draw do
+  get "contact" => "pages#contact"
   root "pages#home"
   get "about" => "pages#about"
   # The priority is based upon order of creation: first created -> highest priority.
