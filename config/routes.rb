@@ -1,4 +1,6 @@
 Hykr::Application.routes.draw do
+  resources :schwierigkeitsgrads
+
   resources :wanderungens
 
   devise_for :users

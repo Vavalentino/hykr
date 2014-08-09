@@ -5,6 +5,7 @@
     <tr>
       <th>Description</th>
       <th>User</th>
+      <th>Schwierigkeitsgrad</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= wanderungen.description %></td>
         <td><%= wanderungen.user.email if wanderungen.user %></td>
+        <td><%= wanderungen.schwierigkeitsgrad.description if wanderungen.schwierigkeitsgrad %></td>
         <td><%= link_to 'Show', wanderungen %></td>
         <td><%= link_to 'Edit', edit_wanderungen_path(wanderungen) %></td>
         <td><%= link_to 'Destroy', wanderungen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
