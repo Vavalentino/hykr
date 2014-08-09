@@ -1,4 +1,6 @@
 Hykr::Application.routes.draw do
+  resources :wanderungens
+
   devise_for :users
   get "contact" => "pages#contact"
   root "pages#home"
