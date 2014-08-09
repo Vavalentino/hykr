@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Description</th>
+      <th>User</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,6 +15,7 @@
     <% @wanderungens.each do |wanderungen| %>
       <tr>
         <td><%= wanderungen.description %></td>
+        <td><%= wanderungen.user.email if wanderungen.user %></td>
         <td><%= link_to 'Show', wanderungen %></td>
         <td><%= link_to 'Edit', edit_wanderungen_path(wanderungen) %></td>
         <td><%= link_to 'Destroy', wanderungen, method: :delete, data: { confirm: 'Are you sure?' } %></td>

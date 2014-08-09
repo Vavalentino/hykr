@@ -14,7 +14,7 @@ class WanderungensController < ApplicationController
 
   # GET /wanderungens/new
   def new
-    @wanderungen = Wanderungen.new
+    @wanderungen = current_user.wanderungens.build
   end
 
   # GET /wanderungens/1/edit
@@ -24,7 +24,7 @@ class WanderungensController < ApplicationController
   # POST /wanderungens
   # POST /wanderungens.json
   def create
-    @wanderungen = Wanderungen.new(wanderungen_params)
+    @wanderungen = current_user.wanderungens.build(wanderungen_params)
 
     respond_to do |format|
       if @wanderungen.save
