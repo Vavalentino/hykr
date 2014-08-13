@@ -4,7 +4,7 @@ class WanderungensController < ApplicationController
   # GET /wanderungens
   # GET /wanderungens.json
   def index
-    @wanderungens = Wanderungen.all
+    @wanderungens = Wanderungen.search(params[:search])
   end
 
   # GET /wanderungens/1

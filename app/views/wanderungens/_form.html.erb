@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :schwierigkeitsgrad %><br>
-    <%= f.collection_select(:schwierigkeitsgrad_id, Schwierigkeitsgrad.all, :id, :description) %>
+    <%= f.collection_select(:schwierigkeitsgrad_id, Schwierigkeitsgrad.all, :id, :description, :include_blank => true) %>
   </div>
   <div class="field">
     <%= f.label :zeitdauer %><br>
