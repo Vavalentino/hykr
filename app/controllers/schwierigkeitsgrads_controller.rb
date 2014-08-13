@@ -69,6 +69,6 @@ class SchwierigkeitsgradsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schwierigkeitsgrad_params
-      params.require(:schwierigkeitsgrad).permit(:description)
+      params.require(:schwierigkeitsgrad).permit(:description, :code)
     end
 end
