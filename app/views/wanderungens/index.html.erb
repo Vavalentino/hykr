@@ -1,10 +1,11 @@
 <h1>Listing wanderungens</h1>
 
-<%= form_tag wanderungens_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
+<%= search_form_for @search do |f| %>
+	<div class="field">
+		<%= f.label :schwierigkeitsgrad_code_gt, "länger als" %>
+		<%= f.number_field :schwierigkeitsgrad_code_gt %>
+	</div>
+	<div class="actions"><%= f.submit "Search" %></div>
 <% end %>
 
 <table>
