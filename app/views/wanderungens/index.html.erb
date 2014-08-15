@@ -2,8 +2,16 @@
 
 <%= search_form_for @search do |f| %>
 	<div class="field">
-		<%= f.label :schwierigkeitsgrad_code_gt, "länger als" %>
-		<%= f.number_field :schwierigkeitsgrad_code_gt %>
+		<%= f.label :schwierigkeitsgrad_code_gteq, "Schwierigkeitsgrad zwischen" %>
+		<%= f.select :schwierigkeitsgrad_code_gteq, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), include_blank: true %>
+		<%= f.label :schwierigkeitsgrad_code_lteq, "und" %>
+		<%= f.select :schwierigkeitsgrad_code_lteq, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), include_blank: true %>
+	</div>
+		<div class="field">
+		<%= f.label :zeitdauer_gteq, "Zeitbedarf zwischen" %>
+		<%= f.number_field :zeitdauer_gteq, :step => 0.5 %>
+		<%= f.label :zeitdauer_lteq, "und" %>
+		<%= f.number_field :zeitdauer_lteq, :step => 0.5 %>
 	</div>
 	<div class="actions"><%= f.submit "Search" %></div>
 <% end %>
@@ -15,6 +23,7 @@
       <th>User</th>
       <th>Schwierigkeitsgrad</th>
       <th>Zeitdauer</th>
+      <th>Weitere infos</th>
       <th></th>
       <th></th>
       <th></th>
@@ -28,6 +37,7 @@
         <td><%= wanderungen.user.email if wanderungen.user %></td>
         <td><%= wanderungen.schwierigkeitsgrad.description if wanderungen.schwierigkeitsgrad %></td>
         <td><%= wanderungen.zeitdauer if wanderungen.zeitdauer %></td>
+        <td><%= wanderungen.moreinfo if wanderungen.moreinfo %></td>
         <td><%= link_to 'Show', wanderungen %></td>
         <td><%= link_to 'Edit', edit_wanderungen_path(wanderungen) %></td>
         <td><%= link_to 'Destroy', wanderungen, method: :delete, data: { confirm: 'Are you sure?' } %></td>

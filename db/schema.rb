@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813132450) do
+ActiveRecord::Schema.define(version: 20140815084533) do
 
   create_table "schwierigkeitsgrads", force: true do |t|
     t.string   "description"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140813132450) do
     t.integer  "user_id"
     t.integer  "schwierigkeitsgrad_id"
     t.float    "zeitdauer"
+    t.string   "moreinfo"
   end
 
   add_index "wanderungens", ["schwierigkeitsgrad_id"], name: "index_wanderungens_on_schwierigkeitsgrad_id"

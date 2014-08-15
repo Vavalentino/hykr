@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'devise', '~> 3.2.4'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4'
+gem 'rails_autolink', '~> 1.1.6'
 
 group :development, :test do
 	gem 'sqlite3'
