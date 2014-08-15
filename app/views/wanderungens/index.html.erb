@@ -24,6 +24,8 @@
       <th>Schwierigkeitsgrad</th>
       <th>Zeitdauer</th>
       <th>Region</th>
+      <th>Höhenmeter rauf</th>
+      <th>Höhenmeter runter</th>
       <th></th>
       <th></th>
       <th></th>
@@ -38,6 +40,8 @@
         <td><%= wanderungen.schwierigkeitsgrad.description if wanderungen.schwierigkeitsgrad %></td>
         <td><%= wanderungen.zeitdauer if wanderungen.zeitdauer %></td>
         <td><%= wanderungen.region.description if wanderungen.region %></td>
+        <td><%= wanderungen.upmeter if wanderungen.upmeter %></td>
+        <td><%= wanderungen.downmeter if wanderungen.downmeter %></td>
         <td><%= link_to 'Show', wanderungen %></td>
         <td><%= link_to 'Edit', edit_wanderungen_path(wanderungen) %></td>
         <td><%= link_to 'Destroy', wanderungen, method: :delete, data: { confirm: 'Are you sure?' } %></td>

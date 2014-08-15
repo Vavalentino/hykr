@@ -70,6 +70,6 @@ class WanderungensController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wanderungen_params
-      params.require(:wanderungen).permit(:description, :schwierigkeitsgrad_id, :zeitdauer, :moreinfo, :region_id )
+      params.require(:wanderungen).permit(:description, :schwierigkeitsgrad_id, :zeitdauer, :moreinfo, :region_id, :upmeter, :downmeter )
     end
 end

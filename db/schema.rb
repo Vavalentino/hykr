@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140815105729) do
+ActiveRecord::Schema.define(version: 20140815112145) do
 
   create_table "regions", force: true do |t|
     t.string   "description"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 20140815105729) do
     t.float    "zeitdauer"
     t.string   "moreinfo"
     t.integer  "region_id"
+    t.integer  "upmeter"
+    t.integer  "downmeter"
   end
 
   add_index "wanderungens", ["region_id"], name: "index_wanderungens_on_region_id"
