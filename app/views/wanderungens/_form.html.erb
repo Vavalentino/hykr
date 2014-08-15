@@ -20,6 +20,10 @@
     <%= f.file_field :image, class: "form-control" %>
   </div>
   <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
+  </div>
+  <div class="field">
     <%= f.label :schwierigkeitsgrad %><br>
     <%= f.collection_select(:schwierigkeitsgrad_id, Schwierigkeitsgrad.all, :id, :description, :include_blank => true) %>
   </div>

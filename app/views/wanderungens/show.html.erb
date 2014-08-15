@@ -5,6 +5,10 @@
   <%= @wanderungen.description %>
 </p>
 <p>
+  <strong>Beschreibung:</strong>
+  <%= @wanderungen.body %>
+</p>
+<p>
   <strong>Weitere infos:</strong>
   <%= h auto_link(@wanderungen.moreinfo).gsub(/\n/, '<br/>').html_safe %>
 </p>

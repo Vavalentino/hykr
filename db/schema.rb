@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140815134812) do
+ActiveRecord::Schema.define(version: 20140815161835) do
 
   create_table "regions", force: true do |t|
     t.string   "description"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20140815134812) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "body"
   end
 
   add_index "wanderungens", ["region_id"], name: "index_wanderungens_on_region_id"
