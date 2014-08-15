@@ -23,7 +23,7 @@
       <th>User</th>
       <th>Schwierigkeitsgrad</th>
       <th>Zeitdauer</th>
-      <th>Weitere infos</th>
+      <th>Region</th>
       <th></th>
       <th></th>
       <th></th>
@@ -37,7 +37,7 @@
         <td><%= wanderungen.user.email if wanderungen.user %></td>
         <td><%= wanderungen.schwierigkeitsgrad.description if wanderungen.schwierigkeitsgrad %></td>
         <td><%= wanderungen.zeitdauer if wanderungen.zeitdauer %></td>
-        <td><%= wanderungen.moreinfo if wanderungen.moreinfo %></td>
+        <td><%= wanderungen.region.description if wanderungen.region %></td>
         <td><%= link_to 'Show', wanderungen %></td>
         <td><%= link_to 'Edit', edit_wanderungen_path(wanderungen) %></td>
         <td><%= link_to 'Destroy', wanderungen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
