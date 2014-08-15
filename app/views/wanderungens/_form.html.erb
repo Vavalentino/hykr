@@ -1,4 +1,4 @@
-<%= form_for(@wanderungen) do |f| %>
+<%= form_for @wanderungen, html: { multipart: true } do |f| %>
   <% if @wanderungen.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@wanderungen.errors.count, "error") %> prohibited this wanderungen from being saved:</h2>
@@ -14,6 +14,10 @@
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
+  </div>
+    <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :schwierigkeitsgrad %><br>

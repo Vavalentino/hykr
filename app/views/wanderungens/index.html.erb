@@ -20,6 +20,7 @@
   <thead>
     <tr>
       <th>Description</th>
+      <th>Description</th>
       <th>User</th>
       <th>Schwierigkeitsgrad</th>
       <th>Zeitdauer</th>
@@ -36,6 +37,7 @@
     <% @wanderungens.each do |wanderungen| %>
       <tr>
         <td><%= wanderungen.description %></td>
+        <td><%= image_tag wanderungen.image.url(:medium) if wanderungen.image_file_name %></td>
         <td><%= wanderungen.user.email if wanderungen.user %></td>
         <td><%= wanderungen.schwierigkeitsgrad.description if wanderungen.schwierigkeitsgrad %></td>
         <td><%= wanderungen.zeitdauer if wanderungen.zeitdauer %></td>
