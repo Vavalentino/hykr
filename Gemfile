@@ -14,6 +14,8 @@ gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4'
 gem 'rails_autolink', '~> 1.1.6'
 gem "paperclip", "~> 3.5.3"
 gem 'aws-sdk', '~> 1.20.0'
+gem 'jquery-turbolinks'
+gem 'masonry-rails', '~> 0.2.0'
 
 group :development, :test do
 	gem 'sqlite3'

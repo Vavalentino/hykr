@@ -16,43 +16,27 @@
 	<div class="actions"><%= f.submit "Search" %></div>
 <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Description</th>
-      <th>User</th>
-      <th>Schwierigkeitsgrad</th>
-      <th>Zeitdauer</th>
-      <th>Region</th>
-      <th>Höhenmeter rauf</th>
-      <th>Höhenmeter runter</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @wanderungens.each do |wanderungen| %>
-      <tr>
-        <td><%= wanderungen.description %></td>
-        <td><%= image_tag wanderungen.image.url(:medium) if wanderungen.image_file_name %></td>
-        <td><%= wanderungen.user.email if wanderungen.user %></td>
-        <td><%= wanderungen.schwierigkeitsgrad.description if wanderungen.schwierigkeitsgrad %></td>
-        <td><%= wanderungen.zeitdauer if wanderungen.zeitdauer %></td>
-        <td><%= wanderungen.region.description if wanderungen.region %></td>
-        <td><%= wanderungen.upmeter if wanderungen.upmeter %></td>
-        <td><%= wanderungen.downmeter if wanderungen.downmeter %></td>
-        <td><%= link_to 'Show', wanderungen %></td>
-        <% if wanderungen.user == current_user %>
-	        <td><%= link_to 'Edit', edit_wanderungen_path(wanderungen) %></td>
-	        <td><%= link_to 'Destroy', wanderungen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	    <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="wanderungens" class="transitions-enabled">
+	<% @wanderungens.each do |wanderungen| %>
+		<div class="box panel panel-default">
+			<%= image_tag wanderungen.image.url(:medium) if wanderungen.image_file_name %>
+			<div class="panel-body">
+				<%= wanderungen.description %>
+				<%= wanderungen.region.description if wanderungen.region %>
+				<%= wanderungen.schwierigkeitsgrad.description if wanderungen.schwierigkeitsgrad %>
+				<%= wanderungen.zeitdauer if wanderungen.zeitdauer %>
+				<%= wanderungen.upmeter if wanderungen.upmeter %>
+				<%= wanderungen.downmeter if wanderungen.downmeter %>
+				<%= wanderungen.user.email if wanderungen.user %>
+				<%= link_to 'Show', wanderungen %>
+				<% if wanderungen.user == current_user %>
+		        	<%= link_to 'Edit', edit_wanderungen_path(wanderungen) %>
+		        	<%= link_to 'Destroy', wanderungen, method: :delete, data: { confirm: 'Bist du sicher?' } %>
+		    	<% end %>
+		    </div>
+		</div>
+	<% end %>
+</div>
 
 <br>
 
