@@ -45,8 +45,10 @@
         <td><%= wanderungen.upmeter if wanderungen.upmeter %></td>
         <td><%= wanderungen.downmeter if wanderungen.downmeter %></td>
         <td><%= link_to 'Show', wanderungen %></td>
-        <td><%= link_to 'Edit', edit_wanderungen_path(wanderungen) %></td>
-        <td><%= link_to 'Destroy', wanderungen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if wanderungen.user == current_user %>
+	        <td><%= link_to 'Edit', edit_wanderungen_path(wanderungen) %></td>
+	        <td><%= link_to 'Destroy', wanderungen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	    <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -54,4 +56,6 @@
 
 <br>
 
-<%= link_to 'New Wanderungen', new_wanderungen_path %>
+<% if user_signed_in? %>
+	<%= link_to 'New Wanderungen', new_wanderungen_path %>
+<% end %>

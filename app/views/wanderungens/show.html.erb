@@ -15,5 +15,8 @@
 
 <%= image_tag @wanderungen.image.url(:medium) %>
 
-<%= link_to 'Edit', edit_wanderungen_path(@wanderungen) %> |
+
+<% if @wanderungen.user == current_user %>
+	<%= link_to 'Edit', edit_wanderungen_path(@wanderungen) %>
+<% end %>
 <%= link_to 'Back', wanderungens_path %>
