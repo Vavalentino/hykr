@@ -70,6 +70,11 @@ class WanderungensController < ApplicationController
       @wanderungen = Wanderungen.find(params[:id])
     end
 
+    def correct_user
+      @wanderungen = current_user.wanderungens.find_by(id: params[:id])
+      redirect_to wanderungens_path, notice: "Du bist nicht berechtigt diese Wanderung zu editieren" if @wanderungen.nil?
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def wanderungen_params
       params.require(:wanderungen).permit(:description, :schwierigkeitsgrad_id, :zeitdauer, :moreinfo, :region_id, :upmeter, :downmeter, :image, :body )

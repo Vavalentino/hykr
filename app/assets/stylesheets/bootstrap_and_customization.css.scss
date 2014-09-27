@@ -8,7 +8,8 @@ $navbar-default-brand-color:	#c0392b;
 $btn-primary-bg: 				#c0392b;
 $link-color:					#c0392b;
 
-@import 'bootstrap';
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 .center {
 	text-align: center;
@@ -22,4 +23,7 @@ $link-color:					#c0392b;
 	font-family: 'Pacifico';
 	font-weight: bold;
 	font-size:		200%;
+}
+.index-padding-left {
+	padding-left: 20px;
 }
