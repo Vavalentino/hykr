@@ -19,7 +19,7 @@
 <div id="wanderungens" class="transitions-enabled">
 	<% @wanderungens.each do |wanderungen| %>
 		<div class="box panel panel-default">
-			<%= image_tag wanderungen.image.url(:medium) if wanderungen.image_file_name %>
+			<%= link_to image_tag(wanderungen.image.url(:medium)), wanderungen if wanderungen.image_file_name %>
 			<div class="panel-body">
 				<p><strong><%= wanderungen.description %></strong></p>
 				<% if wanderungen.region %>
@@ -35,20 +35,19 @@
 					<%= wanderungen.zeitdauer %>Tage
 				<% end %>			
 				<% if wanderungen.upmeter %>
-					<div class="pull-right index-padding-right">
+					<div class="pull-right">
 						<span class="glyphicon glyphicon-arrow-up"></span>
 						<%= wanderungen.upmeter %>m
 					</div>
 				<% end %>
 				<% if wanderungen.downmeter %>
-					<div class="pull-right">
+					<div class="pull-right index-padding-left">
 						<span class="glyphicon glyphicon-arrow-down"></span>
 						<%= wanderungen.downmeter %>m
 					</div>
 				<% end %>
 				<p></p>
-				<%= wanderungen.user.email if wanderungen.user %>
-				<%= link_to 'Show', wanderungen %>
+				<%= wanderungen.user.email if wanderungen.user %><br>
 				<% if wanderungen.user == current_user %>
 		        	<%= link_to edit_wanderungen_path(wanderungen) do %>
 		        		<span class="glyphicon glyphicon-edit"></span>
