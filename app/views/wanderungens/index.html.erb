@@ -47,7 +47,7 @@
 					</div>
 				<% end %>
 				<p></p>
-				<%= wanderungen.user.email if wanderungen.user %><br>
+				<%= wanderungen.user.name if wanderungen.user %><br>
 				<% if wanderungen.user == current_user %>
 		        	<%= link_to edit_wanderungen_path(wanderungen) do %>
 		        		<span class="glyphicon glyphicon-edit"></span>

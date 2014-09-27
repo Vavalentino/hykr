@@ -45,7 +45,8 @@
           <%= @wanderungen.moreinfo if @wanderungen.moreinfo %><br>
         </p>
         <p>
-          <%= @wanderungen.user.email if @wanderungen.user %><br>
+          Der Eintrag wurde hinzugefügt von:<br>
+          <%= @wanderungen.user.name if @wanderungen.user %><br>
         </p>
         <% if @wanderungen.user == current_user %>
               <%= link_to edit_wanderungen_path(@wanderungen) do %>
