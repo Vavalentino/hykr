@@ -7,7 +7,7 @@ class WanderungensController < ApplicationController
   # GET /wanderungens.json
   def index
     @search = Wanderungen.ransack(params[:q])
-    @wanderungens = @search.result.order("created_at DESC")
+    @wanderungens = @search.result.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
   end
 
   # GET /wanderungens/1

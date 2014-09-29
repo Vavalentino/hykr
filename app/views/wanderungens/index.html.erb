@@ -67,6 +67,6 @@
 
 <br>
 
-<% if user_signed_in? %>
-	<%= link_to 'New Wanderungen', new_wanderungen_path %>
-<% end %>
+<div class="center">
+	<%= will_paginate @wanderungens, renderer: BootstrapPagination::Rails %>
+</div>
