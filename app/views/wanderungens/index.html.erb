@@ -1,23 +1,5 @@
 <%= render "pages/home" %>
 
-<h1>Listing wanderungens</h1>
-
-<%= search_form_for @search do |f| %>
-	<div class="field">
-		<%= f.label :schwierigkeitsgrad_code_gteq, "Schwierigkeitsgrad zwischen" %>
-		<%= f.select :schwierigkeitsgrad_code_gteq, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), include_blank: true %>
-		<%= f.label :schwierigkeitsgrad_code_lteq, "und" %>
-		<%= f.select :schwierigkeitsgrad_code_lteq, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), include_blank: true %>
-	</div>
-		<div class="field">
-		<%= f.label :zeitdauer_gteq, "Zeitbedarf zwischen" %>
-		<%= f.number_field :zeitdauer_gteq, :step => 0.5 %>
-		<%= f.label :zeitdauer_lteq, "und" %>
-		<%= f.number_field :zeitdauer_lteq, :step => 0.5 %>
-	</div>
-	<div class="actions"><%= f.submit "Search" %></div>
-<% end %>
-
 <div id="wanderungens" class="transitions-enabled">
 	<% @wanderungens.each do |wanderungen| %>
 		<div class="box panel panel-default">

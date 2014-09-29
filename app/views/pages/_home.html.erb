@@ -1,18 +1,23 @@
 <div class="jumbotron">
 	<h1>Finde deine Wanderung</h1>
-	<div class="dropdown">
-  		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-    		Schwierigkeitsgrad
-    		<span class="caret"></span>
-  		</button>
-	  	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-	    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Wandern</a></li>
-	    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Bergwandern</a></li>
-	    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Anspruchsvolles Bergwandern</a></li>
-	    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Alpinwandern</a></li>
-	    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Anspruchsvolles Alpinwandern</a></li>
-	    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Schwieriges Alpinwandern</a></li>
-	  	</ul>
-	<button type="button" class="btn btn-primary">Los geht's!</button>
-	</div>
+
+<%= search_form_for @search do |f| %>
+<div class="field form-group reduced-width">
+  <%= f.label :schwierigkeitsgrad_code_gteq, "Schwierigkeit von" %> 
+  <%= f.select(:schwierigkeitsgrad_code_gteq, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), {:include_blank => true}, {class: "form-control"}) %>
+  <%= f.label :schwierigkeitsgrad_code_lteq, "Schwierigkeit bis" %> 
+  <%= f.select(:schwierigkeitsgrad_code_lteq, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), {:include_blank => true}, {class: "form-control"}) %>
 </div>
+<div class="field form-group doublereduced-width">
+  <%= f.label :zeitdauer_gteq, "Anzahl Tage von" %> 
+  <%= f.number_field :zeitdauer_gteq, :step => 0.5, class: "form-control" %>
+  <%= f.label :zeitdauer_lteq, "Anzahl Tage bis" %> 
+  <%= f.number_field :zeitdauer_gteq, :step => 0.5, class: "form-control" %>
+</div>
+<div class="actions form-group"><%= f.submit "Los geht's", class: "btn btn-primary" %></div>
+<% end %>
+
+
+
+</div>
+
