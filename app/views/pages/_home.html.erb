@@ -1,20 +1,28 @@
 <div class="jumbotron">
 	<h1>Finde deine Wanderung</h1>
 
-<%= search_form_for @search do |f| %>
-<div class="field form-group reduced-width">
-  <%= f.label :schwierigkeitsgrad_code_gteq, "Schwierigkeit von" %> 
-  <%= f.select(:schwierigkeitsgrad_code_gteq, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), {:include_blank => true}, {class: "form-control"}) %>
-  <%= f.label :schwierigkeitsgrad_code_lteq, "Schwierigkeit bis" %> 
-  <%= f.select(:schwierigkeitsgrad_code_lteq, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), {:include_blank => true}, {class: "form-control"}) %>
-</div>
-<div class="field form-group doublereduced-width">
-  <%= f.label :zeitdauer_gteq, "Anzahl Tage von" %> 
-  <%= f.number_field :zeitdauer_gteq, :step => 0.5, class: "form-control" %>
-  <%= f.label :zeitdauer_lteq, "Anzahl Tage bis" %> 
-  <%= f.number_field :zeitdauer_gteq, :step => 0.5, class: "form-control" %>
-</div>
-<div class="actions form-group"><%= f.submit "Los geht's", class: "btn btn-primary" %></div>
+<%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
+		<div class="form-group">
+				<%= f.label :schwierigkeitsgrad_code_gteq, "Schwierigkeit von" %><br> 
+				<%= f.select(:schwierigkeitsgrad_code_gteq, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), {:include_blank => true}, {class: "form-control reduced-width"}) %>
+		</div>
+		<div class="form-group">
+				<%= f.label :schwierigkeitsgrad_code_lteq, "Schwierigkeit bis" %><br> 
+				<%= f.select(:schwierigkeitsgrad_code_lteq, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), {:include_blank => true}, {class: "form-control reduced-width"}) %>
+		</div>
+
+		<div class="form-group">
+  				<%= f.label :zeitdauer_gteq, "Anzahl Tage von" %><br>
+  				<%= f.number_field :zeitdauer_gteq, :step => 0.5, :prompt => "Anzahl Tage von", class: "form-control doublereduced-width" %>
+  		</div>
+		<div class="form-group">
+  				<%= f.label :zeitdauer_lteq, "Anzahl Tage bis" %><br> 
+  				<%= f.number_field :zeitdauer_gteq, :step => 0.5, class: "form-control doublereduced-width" %>
+  		</div>
+		<div class="actions form-group ">
+				<label></label><br>
+				<%= f.submit "Los geht's", class: "btn btn-primary" %>
+		</div>
 <% end %>
 
 
