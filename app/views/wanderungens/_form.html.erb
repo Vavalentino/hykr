@@ -26,11 +26,11 @@
     </div>
     <div class="form-group">
       <%= f.label :schwierigkeitsgrad, "Schwierigkeitsgrad nach SAC Wanderskala" %><br>
-      <%= f.select(:schwierigkeitsgrad, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), {:include_blank => true}, {class: "form-control"}) %>
+      <%= f.select(:schwierigkeitsgrad_id, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), {:include_blank => true}, {class: "form-control"}) %>
     </div>
       <div class="form-group">
       <%= f.label :region %><br>
-      <%= f.select(:region, options_from_collection_for_select(Region.all, :id, :description), {:include_blank => true}, {class: "form-control"}) %>
+      <%= f.select(:region_id, options_from_collection_for_select(Region.all, :id, :description), {:include_blank => true}, {class: "form-control"}) %>
     </div>
     <div class="form-group">
       <%= f.label :zeitdauer, "Anzahl Tage" %><br>
