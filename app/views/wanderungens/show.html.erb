@@ -24,15 +24,15 @@
           <span class="glyphicon glyphicon-time"></span>
           <%= @wanderungen.zeitdauer %>Tage
         <% end %>     
-        <% if @wanderungen.upmeter %>
-          <div class="pull-right">
-            <span class="glyphicon glyphicon-arrow-up"></span>
+        <% if @wanderungen.downmeter %>
+          <div class="inline pull-right">
+            <span class="glyphicon glyphicon-arrow-down"></span>
             <%= @wanderungen.upmeter %>m
           </div>
         <% end %>
-        <% if @wanderungen.downmeter %>
-          <div class="pull-right index-padding-left">
-            <span class="glyphicon glyphicon-arrow-down"></span>
+        <% if @wanderungen.upmeter %>
+          <div class="inline pull-right">
+            <span class="glyphicon glyphicon-arrow-up"></span>
             <%= @wanderungen.downmeter %>m
           </div>
         <% end %>

@@ -1,53 +1,56 @@
-<%= form_for @wanderungen, html: { multipart: true } do |f| %>
-  <% if @wanderungen.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@wanderungen.errors.count, "error") %> prohibited this wanderungen from being saved:</h2>
+<div class="panel-body">
+  <%= form_for @wanderungen, html: { multipart: true } do |f| %>
+    <% if @wanderungen.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@wanderungen.errors.count, "error") %> prohibited this wanderungen from being saved:</h2>
 
-      <ul>
-      <% @wanderungen.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @wanderungen.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :description, "Titel" %><br>
+      <%= f.text_field :description, class: "form-control" %>
     </div>
-  <% end %>
+      <div class="form-group">
+      <%= f.label :image, "Bild hochladen" %>
+      <%= f.file_field :image, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :body, "Beschreibung der Wanderung" %><br>
+      <%= f.text_area :body, rows: "5", class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :schwierigkeitsgrad, "Schwierigkeitsgrad nach SAC Wanderskala" %><br>
+      <%= f.select(:schwierigkeitsgrad, options_from_collection_for_select(Schwierigkeitsgrad.all, :code, :description), {:include_blank => true}, {class: "form-control"}) %>
+    </div>
+      <div class="form-group">
+      <%= f.label :region %><br>
+      <%= f.select(:region, options_from_collection_for_select(Region.all, :id, :description), {:include_blank => true}, {class: "form-control"}) %>
+    </div>
+    <div class="form-group">
+      <%= f.label :zeitdauer, "Anzahl Tage" %><br>
+      <%= f.number_field :zeitdauer, :step => 0.5, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :upmeter, "Höhenmeter rauf" %><br>
+      <%= f.number_field :upmeter, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :downmeter, "Höhenmeter runter" %><br>
+      <%= f.number_field :downmeter, class: "form-control" %>
+    </div>
+     <div class="form-group">
+      <%= f.label :moreinfo, "Link zu zusätzlichen Infos" %><br>
+      <%= f.text_field :moreinfo, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Wanderung erstellen", class: "btn btn-primary" %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-    <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image, class: "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_field :body %>
-  </div>
-  <div class="field">
-    <%= f.label :schwierigkeitsgrad %><br>
-    <%= f.collection_select(:schwierigkeitsgrad_id, Schwierigkeitsgrad.all, :id, :description, :include_blank => true) %>
-  </div>
-    <div class="field">
-    <%= f.label :region %><br>
-    <%= f.collection_select(:region_id, Region.all, :id, :description, :include_blank => true) %>
-  </div>
-  <div class="field">
-    <%= f.label :zeitdauer %><br>
-    <%= f.number_field :zeitdauer, :step => 0.5 %>
-  </div>
-  <div class="field">
-    <%= f.label :upmeter %><br>
-    <%= f.number_field :upmeter %>
-  </div>
-  <div class="field">
-    <%= f.label :downmeter %><br>
-    <%= f.number_field :downmeter %>
-  </div>
-   <div class="field">
-    <%= f.label :moreinfo %><br>
-    <%= f.text_field :moreinfo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

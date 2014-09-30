@@ -17,18 +17,14 @@
 				<% if wanderungen.zeitdauer %>
 					<span class="glyphicon glyphicon-time"></span>
 					<%= wanderungen.zeitdauer %>Tage
-				<% end %>			
+				<% end %><br>			
 				<% if wanderungen.upmeter %>
-					<div class="pull-right">
-						<span class="glyphicon glyphicon-arrow-up"></span>
-						<%= wanderungen.upmeter %>m
-					</div>
-				<% end %>
+					<span class="glyphicon glyphicon-arrow-up"></span>
+					<%= wanderungen.upmeter %>m
+				<% end %><br>
 				<% if wanderungen.downmeter %>
-					<div class="pull-right index-padding-left">
-						<span class="glyphicon glyphicon-arrow-down"></span>
-						<%= wanderungen.downmeter %>m
-					</div>
+					<span class="glyphicon glyphicon-arrow-down"></span>
+					<%= wanderungen.downmeter %>m
 				<% end %>
 				<p></p>
 				<%= wanderungen.user.name if wanderungen.user %><br>
