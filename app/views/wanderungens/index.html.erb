@@ -3,7 +3,7 @@
 <div id="wanderungens" class="transitions-enabled">
 	<% @wanderungens.each do |wanderungen| %>
 		<div class="box panel panel-default">
-			<%= link_to image_tag(wanderungen.image.url(:medium)), wanderungen if wanderungen.image_file_name %>
+			<%= link_to image_tag(wanderungen.image.url(:medium)), wanderungen %>
 			<div class="panel-body">
 				<p><strong><%= wanderungen.description %></strong></p>
 				<% if wanderungen.region %>

@@ -41,8 +41,10 @@
           <%= auto_link(@wanderungen.body) if @wanderungen.body %><br>
         </p>
         <p>
-          Diese Wanderung ist ausführlich beschrieben auf:<br>
-          <%= auto_link(@wanderungen.moreinfo) if @wanderungen.moreinfo %><br>
+          <% if @wanderungen.moreinfo %>
+          <p>Diese Wanderung ist ausführlich beschrieben auf:<br>
+          <%= auto_link(@wanderungen.moreinfo) %>
+          <% end %>
         </p>
         <p>
           Der Eintrag wurde hinzugefügt von:<br>

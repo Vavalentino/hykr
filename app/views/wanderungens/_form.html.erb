@@ -2,7 +2,7 @@
   <%= form_for @wanderungen, html: { multipart: true } do |f| %>
     <% if @wanderungen.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@wanderungen.errors.count, "error") %> prohibited this wanderungen from being saved:</h2>
+        <h2><%= pluralize(@wanderungen.errors.count, "Fehler") %> verhinderte das Speichern der Wanderung:</h2>
 
         <ul>
         <% @wanderungen.errors.full_messages.each do |msg| %>

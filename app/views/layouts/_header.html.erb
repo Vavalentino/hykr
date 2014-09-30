@@ -15,8 +15,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right navbar-form">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "über hykr", about_path %></li>
-        <li><%= link_to "Kontakt", contact_path %></li>
         <% if user_signed_in? %>
         	<li><%= link_to "Account", edit_user_registration_path %></li>
         	<li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
