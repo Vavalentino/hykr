@@ -38,11 +38,11 @@
         <% end %>
         <p></p>
         <p>
-          <%= @wanderungen.body if @wanderungen.body %><br>
+          <%= auto_link(@wanderungen.body) if @wanderungen.body %><br>
         </p>
         <p>
           Diese Wanderung ist ausführlich beschrieben auf:<br>
-          <%= @wanderungen.moreinfo if @wanderungen.moreinfo %><br>
+          <%= auto_link(@wanderungen.moreinfo) if @wanderungen.moreinfo %><br>
         </p>
         <p>
           Der Eintrag wurde hinzugefügt von:<br>

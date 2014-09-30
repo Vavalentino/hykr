@@ -31,7 +31,7 @@ class WanderungensController < ApplicationController
 
     respond_to do |format|
       if @wanderungen.save
-        format.html { redirect_to @wanderungen, notice: 'Wanderungen was successfully created.' }
+        format.html { redirect_to @wanderungen, notice: 'Wanderungen erfolgreich erstellt.' }
         format.json { render action: 'show', status: :created, location: @wanderungen }
       else
         format.html { render action: 'new' }
@@ -45,7 +45,7 @@ class WanderungensController < ApplicationController
   def update
     respond_to do |format|
       if @wanderungen.update(wanderungen_params)
-        format.html { redirect_to @wanderungen, notice: 'Wanderungen was successfully updated.' }
+        format.html { redirect_to @wanderungen, notice: 'Wanderung erfolgreich aktualisiert.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
